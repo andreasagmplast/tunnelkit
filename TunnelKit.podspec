@@ -7,14 +7,13 @@ Pod::Spec.new do |s|
   s.author       = { 'You' => 'you@example.com' }
   s.platform     = :ios, '15.0'
   s.source       = { :git => 'https://github.com/andreasagmplast/tunnelkit.git', :branch => 'static-only' }
-
-  s.static_framework = true
   s.requires_arc = true
 
   # -------------------------
   # Core (Swift)
   # -------------------------
   s.subspec 'Core' do |sp|
+    sp.static_framework = true
     sp.source_files = 'Sources/TunnelKitCore/**/*.swift'
     sp.dependency 'SwiftyBeaver'
   end
@@ -23,6 +22,7 @@ Pod::Spec.new do |s|
   # Core (C)
   # -------------------------
   s.subspec 'CTunnelKitCore' do |sp|
+    sp.static_framework = true
     sp.source_files = 'Sources/CTunnelKitCore/**/*.{h,c}'
     sp.public_header_files = 'Sources/CTunnelKitCore/**/*.h'
     sp.requires_arc = false
@@ -32,6 +32,7 @@ Pod::Spec.new do |s|
   # OpenVPN Protocol (C)
   # -------------------------
   s.subspec 'CTunnelKitOpenVPNProtocol' do |sp|
+    sp.static_framework = true
     sp.source_files = 'Sources/CTunnelKitOpenVPNProtocol/**/*.{h,c}'
     sp.public_header_files = 'Sources/CTunnelKitOpenVPNProtocol/**/*.h'
     sp.requires_arc = false
@@ -41,6 +42,7 @@ Pod::Spec.new do |s|
   # OpenVPN Protocol (Swift)
   # -------------------------
   s.subspec 'OpenVPNProtocol' do |sp|
+    sp.static_framework = true
     sp.source_files = 'Sources/TunnelKitOpenVPNProtocol/**/*.swift'
     sp.dependency 'TunnelKit/CTunnelKitOpenVPNProtocol'
     sp.dependency 'TunnelKit/CTunnelKitCore'
@@ -51,6 +53,7 @@ Pod::Spec.new do |s|
   # OpenVPN Core
   # -------------------------
   s.subspec 'OpenVPNCore' do |sp|
+    sp.static_framework = true
     sp.source_files = 'Sources/TunnelKitOpenVPNCore/**/*.swift'
     sp.dependency 'TunnelKit/OpenVPNProtocol'
     sp.dependency 'TunnelKit/CTunnelKitCore'
@@ -61,6 +64,7 @@ Pod::Spec.new do |s|
   # WireGuard Core
   # -------------------------
   s.subspec 'WireGuardCore' do |sp|
+    sp.static_framework = true
     sp.source_files = 'Sources/TunnelKitWireGuardCore/**/*.swift'
     sp.dependency 'TunnelKit/Core'
   end
