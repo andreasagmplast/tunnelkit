@@ -58,7 +58,7 @@ Pod::Spec.new do |s|
     sp.source_files = 'Sources/TunnelKitOpenVPNCore/**/*.swift'
     sp.dependency 'TunnelKit/OpenVPNProtocol'
     sp.dependency 'TunnelKit/CTunnelKitCore'
-    sp.dependency 'OpenSSL-Apple'
+    sp.dependency 'OpenSSL-Apple', '~> 1.1.180'
   end
 
   # -------------------------
